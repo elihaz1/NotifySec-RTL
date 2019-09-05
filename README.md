@@ -1,5 +1,5 @@
 # NotifySec-RTL
-NotifySec is an Outlook add-in used to help users report a suspicious e-mail to security team. the addin is designed to support right to left notifications and ready to build setup projects for building MSI installer.
+NotifySec is an Outlook add-in used to help users report a suspicious e-mail to security team. this Outlook add-in is designed to support right to left notifications and building MSI installer for fast deployment.
 
 It is based on the work of https://github.com/certsocietegenerale/NotifySecurity and NightWizzard's way for adding message headers, (https://www.codeproject.com/Questions/1074498/Outlook-add-in-in-Csharp-get-message-header) with several modification and new features:
 
@@ -8,8 +8,17 @@ It is based on the work of https://github.com/certsocietegenerale/NotifySecurity
 3.the add-in button is in the inbox toolbar tabMail and in TabReadMessage so users can report old e-mails located in any folder.
 4. New icon 
 
-Usage
+**Usage**
 The solution was coded on visual studio 2017. 
-The add-in was tested on office 2010, 2013, 2016 with 
+The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 versions.
+
+
+**Prerequisites**
+1. visual studio 2017
+2. wix toolset - https://wixtoolset.org/releases/v3.11.1/stable
+
+**howto**
+soon.... 
+
 
 © 2019 GitHub, Inc.
