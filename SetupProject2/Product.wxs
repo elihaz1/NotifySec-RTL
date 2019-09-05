@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="CE2CEA93-9DD3-4724-8FE3-FCBF0A0915C2"
+           Name="Notifysec Outlook Add-in"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="opal"
+           UpgradeCode="7b3b630d-c617-419f-8272-95942cf21420">
+
+
+
+    <!--64 bit-->
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64"/>
+
+    <?if $(var.Platform) = "x64" ?>
+    <?define ProductName = "Notifysec Outlook Add-in (64 bit)" ?>
+    <?define Win64 = "yes" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+    <?else ?>
+    <?define ProductName = "Product Name" ?>
+    <?define Win64 = "no" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+    <?endif ?>
+
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="NotifySecOutlook2010.cab" EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature" Title="Notifysec Outlook Add-in" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="Registry_FriendlyName" />
+      <ComponentRef Id="Registry_Description" />
+      <ComponentRef Id="Registry_Manifest" />
+      <ComponentRef Id="Registry_LoadBehavior" />
+    </Feature>
+
+  
+      <UIRef Id="WixUI_Minimal" />
+      <Property Id="LicenseAccepted" Value="1"/>
+     
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+                                                                                                                                                                                                                                                           
+      <Directory Id="ProgramFiles64Folder">
+        
+       <Directory Id="INSTALLFOLDER" Name="OutlookAddin_NotifySec" />
+        <Component Id="Registry_FriendlyName">
+          <RegistryValue Id="RegKey_FriendlyName" Root="HKLM"
+           Key="Software\Microsoft\Office\Outlook\AddIns\NotifySecOutlook2010"
+           Name="FriendlyName"
+           Value="NotifySec"
+           Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_Description">
+          <!--local machine - need local admin-->
+          <RegistryValue Id="RegKey_Description" Root="HKLM"
+           Key="Software\Microsoft\Office\Outlook\AddIns\NotifySecOutlook2010"
+           Name="Description"
+           Value="OutlookAddin_NotifySec"
+           Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_Manifest">
+          <RegistryValue Id="RegKey_Manifest" Root="HKLM"
+           Key="Software\Microsoft\Office\Outlook\AddIns\NotifySecOutlook2010"
+           Name="Manifest" Value="[INSTALLFOLDER]NotifySecOutlook2010.vsto|vstolocal"
+           Type="string" KeyPath="yes" />
+        </Component>
+        <Component Id="Registry_LoadBehavior">
+          <RegistryValue Id="RegKey_LoadBehavior" Root="HKLM"
+           Key="Software\Microsoft\Office\Outlook\AddIns\NotifySecOutlook2010"
+           Name="LoadBehavior" Value="3"
+           Type="integer" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+
+      <Component Id="a">
+        <File Id="NotifySecOutlook2010_vsto" KeyPath="yes"
+        Name="NotifySecOutlook2010.vsto" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="b">
+        <File Id="NotifySecOutlook2010_dll_manifest" KeyPath="yes"
+        Name="NotifySecOutlook2010.dll.manifest" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="k">
+        <File Id="NotifySecOutlook2010_dll" KeyPath="yes"
+        Name="NotifySecOutlook2010.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="c">
+        <File Id="Microsoft.VisualStudio.Tools.Applications.Runtime_dll" KeyPath="yes"
+        Name="Microsoft.VisualStudio.Tools.Applications.Runtime.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="d">
+        <File Id="Microsoft.Office.Tools.v4.0.Framework_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.v4.0.Framework.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="e">
+        <File Id="Microsoft.Office.Tools.Outlook.v4.0.Utilities_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="j">
+        <File Id="MSOfficeToolsCommon_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.Common.v4.0.Utilities.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="f">
+        <File Id="Microsoft.Office.Tools.Outlook_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.Outlook.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="g">
+        <File Id="Microsoft.Office.Tools_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+      <Component Id="i">
+        <File Id="Microsoft.Office.Tools.Common_dll" KeyPath="yes"
+        Name="Microsoft.Office.Tools.Common.dll" Source="$(var.AddinFiles)"></File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

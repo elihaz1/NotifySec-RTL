@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load" >
+  <ribbon startFromScratch="false">
+    <tabs>
+      <tab idMso="TabMail" visible="true">
+        <group  id="grousp1"  getLabel="GetGroupLabel" visible="true">
+          <button id="button1D"
+           size="large"
+                      getLabel="GetButtonLabel"
+                      getImage="getImage"
+                      onAction="ShowMessageClick"></button>
+         </group>
+        </tab>
+      
+        <tab idMso="TabReadMessage" visible="true">
+        <group  id="grousp12" visible="true">
+          <button id="button1D2"
+           size="large"
+                  getLabel="GetButtonLabel"    
+                  getImage="getImage"
+                  onAction="ShowMessageClick"></button>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+
+</customUI>
+
