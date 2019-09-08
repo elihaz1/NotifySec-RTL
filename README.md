@@ -6,7 +6,7 @@ It is based on the work of https://github.com/certsocietegenerale/NotifySecurity
 2. the Solution include 2 wixtool setup project for building MSI installer for 32bit and 64bit MS office outlook (see howto section) which allow easy deployment. 
 3.the add-in button is in the inbox toolbar tabMail and in TabReadMessage so users can report old e-mails located in any folder.
 4. New icon <br />
-![](NotifySec Addin.png)
+
 
 **Usage** <br />
 The solution was coded on visual studio 2017. 
