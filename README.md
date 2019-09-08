@@ -28,7 +28,7 @@ The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 ver
 ![build](https://user-images.githubusercontent.com/29439567/64486056-fad46f00-d230-11e9-9c50-ae8afc3387e7.png)
 7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice). Before building, Please check that the configuration mangment definition are as requiered.
 8. The Add-in is installed on HKLM (Local Machine) so it should be done with a user that is a local admin on the target pc.
-9. Run Command is:
+9. Run Command is:<br />
 msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin32bit.msi
 msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin64bit.msi
 
