@@ -25,10 +25,14 @@ The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 ver
 5. Before building the Outlook add-in and the MSI files. You'll need to Check the Configuration Manger (under "Build" Menu) as follow:  
 ![configurationManagment](https://user-images.githubusercontent.com/29439567/64486017-62d68580-d230-11e9-95a4-0b6758375787.png)
 6. It's best to build each project separatly, starting from the "NotifySecOutllok2010" project. In the solution explorer window, right click it and choose build. 
-![build](https://user-images.githubusercontent.com/29439567/64486056-fad46f00-d230-11e9-9c50-ae8afc3387e7.png)
-7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice). Before building, Please check that the configuration mangment definition are as requiered.
+![build](https://user-images.githubusercontent.com/29439567/64486644-2eff5e00-d238-11e9-87f8-8a098818c818.png)
+7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice). *_Before building the SetupProject you need, Please:_*<br/>
+ a. Add Wixtoolset DLL file to the SetupProject32 and SetupProject64 (In soulotion explorer right click the "References Folder" that's under the SetupProject and choose "Add Reference".Locate WixUIExtension.dll and WixNetFxExtension.dll aand Add them (usally in C:\Program Files (x86)\WiX Toolset v3.11\bin)
+![WixDependencies](https://user-images.githubusercontent.com/29439567/64486635-1bec8e00-d238-11e9-912d-c0cc1ad96c19.png)
+ b.that the configuration mangment definition are as requiered.<br/>
+
 8. The Add-in is installed on HKLM (Local Machine) so it should be done with a user that is a local admin on the target pc.
-9. Run Command is:<br />
+9. Run Command is:<br/>
 msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin32bit.msi
 msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin64bit.msi
 
