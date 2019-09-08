@@ -18,8 +18,27 @@ The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 ver
 
 **howto** <br />
 1. Open NotifySecOutlook2010.sln in VisualStudio
-2. Using solution Explorer - click "ribbon.cs" to edit, look for the comments asking for security team mail and help desk mail:
+2. Using solution Explorer - double click "ribbon.cs" to edit mode, look for the comments asking you to enter security team mail and help desk mail as foloow: <br />
+![enteryoursecteammail](https://user-images.githubusercontent.com/29439567/64485848-0bcfb100-d22e-11e9-81a6-c36aa5a08114.png)
+3. SAVE. 
+4. Test the solution by closing OUTLOOK.EXE and under the "DEBUG" menu click "START DEBUGGING".
+5. Before building the Outlook add-in and the MSI files. You'll need to Check the Configuration Manger (under "Build" Menu) as follow:  
+![configurationManagment](https://user-images.githubusercontent.com/29439567/64486017-62d68580-d230-11e9-95a4-0b6758375787.png)
+6. It's best to build each project separatly, starting from the "NotifySecOutllok2010" project. In the solution explorer window, right click it and choose build. 
+![build](https://user-images.githubusercontent.com/29439567/64486056-fad46f00-d230-11e9-9c50-ae8afc3387e7.png)
+7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice). Before building, Please check that the configuration mangment definition are as requiered.
+8. The Add-in is installed on HKLM (Local Machine) so it should be done with a user that is a local admin on the target pc.
+9. Run Command is:
+msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin32bit.msi
+msiexec /q /i \\Remote_Server_Address\Folder_Name\InstallNotifysecOutlookAddin64bit.msi
 
+**Support** <br />
+Eli Hazan - elihaz@gmail.com
+
+**Thanks** <br />
+Dvir Dahan & Alon Ekroni for QA and Testing. 
+
+ 
 
 
 © 2019 GitHub, Inc.
