@@ -14,7 +14,7 @@ The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 ver
 
 **Prerequisites** <br />
 1. visual studio 2017
-2. wix toolset - https://wixtoolset.org/releases/v3.11.1/stable
+2. install wix toolset - https://wixtoolset.org/releases/v3.11.1/stable
 
 **howto** <br />
 1. Open NotifySecOutlook2010.sln in VisualStudio
@@ -26,8 +26,8 @@ The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 ver
 ![configurationManagment](https://user-images.githubusercontent.com/29439567/64486017-62d68580-d230-11e9-95a4-0b6758375787.png)
 6. It's best to build each project separatly, starting from the "NotifySecOutllok2010" project. In the solution explorer window, right click it and choose build. 
 ![build](https://user-images.githubusercontent.com/29439567/64486644-2eff5e00-d238-11e9-87f8-8a098818c818.png)
-7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice). *_Before building the SetupProject you need, Please:_*<br/>
- a. Add Wixtoolset DLL file to the SetupProject32 and SetupProject64 (In soulotion explorer right click the "References Folder" that's under the SetupProject and choose "Add Reference".Locate WixUIExtension.dll and WixNetFxExtension.dll aand Add them (usally in C:\Program Files (x86)\WiX Toolset v3.11\bin)
+7. Reapet this for SetupProject32 (build MSI installer for 32 bit offfice) and SetupProject64 (build MSI installer for 32 bit offfice).<br /> _Before building the SetupProject you need, Please:_<br/>
+ a. Add Wixtoolset DLL file to the SetupProject32 and SetupProject64 (In soulotion explorer right click the "References Folder" that's under the SetupProject and choose "Add Reference".Locate WixUIExtension.dll and WixNetFxExtension.dll aand Add them (usally in C:\Program Files (x86)\WiX Toolset v3.11\bin)<br />
 ![WixDependencies](https://user-images.githubusercontent.com/29439567/64486635-1bec8e00-d238-11e9-912d-c0cc1ad96c19.png)
  b.that the configuration mangment definition are as requiered.<br/>
 
