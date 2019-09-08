@@ -13,7 +13,6 @@ It is based on the work of https://github.com/certsocietegenerale/NotifySecurity
 The solution was coded on visual studio 2017. 
 The add-in was successfully tested on office 2010, 2013, 2016 on x86 and x64 versions.
 
-
 **Prerequisites**
 1. visual studio 2017
 2. wix toolset - https://wixtoolset.org/releases/v3.11.1/stable
